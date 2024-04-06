@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cell Image Graph</title>
+    <!-- Include necessary CSS and JS libraries -->
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="/">Single Cell Classifier</a>
+        <a href="/graph" class="active">Graph Page</a> <!-- Active link for current page -->
+    </div>
+
+    <!-- Content area -->
+    <div class="content">
+        <h1 class="text-center">Graph Page</h1>
+        <!-- Form for uploading cell image -->
+        <form class="p-3 text-center" action="/graph" method="post" enctype="multipart/form-data">
+            <input class="form-control" type="file" name="imagefile" />
+            <input class="btn btn-primary mt-3" type="submit" value="Predict Cell" />
+        </form>
+
+        <!-- Graph display area -->
+        <div id="graph-container">
+            <!-- Placeholder for graph display -->
+        </div>
+    </div>
+</body>
+</html>

@@ -1,31 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Single Cell Classifier</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <h1 class="text-center">Single Cell Classifier</h1>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <style>
+        /* Style for sidebar */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #f8f9fa; /* Light gray */
+            padding-top: 20px;
+        }
+        /* Style for sidebar links */
+        .sidebar a {
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            color: black;
+        }
+        /* Style for active link */
+        .active {
+            background-color: #e9ecef; /* Gray */
+        }
+        /* Content area */
+        .content {
+            margin-left: 250px; /* Same width as the sidebar */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="/">Single Cell Classifier</a>
+        <a href="/graph">Graph Page</a> <!-- Add link to the new page -->
+    </div>
 
-    <script src="" async defer></script>
-    <form
-      class="p-3 text-center"
-      action="/"
-      ,
-      method="post"
-      enctype="multipart/form-data"
-    >
-      <input class="form-control" type="file" name="imagefile" />
-      <input class="btn btn-primary mt-3" type="submit" value="Predict Cell" />
-    </form>
+    <!-- Content area -->
+    <div class="content">
+        <h1 class="text-center">Single Cell Classifier</h1>
+        <form class="p-3 text-center" action="/" method="post" enctype="multipart/form-data">
+            <input class="form-control" type="file" name="imagefile" />
+            <input class="btn btn-primary mt-3" type="submit" value="Predict Cell" />
+        </form>
 
-    {% if prediction %}
-    <p class="text-center">Cell image is a/an{{prediction}}</p>
-    {% endif %}
-  </body>
+        {% if prediction %}
+            <p class="text-center">Cell image is a/an{{prediction}}</p>
+        {% endif %}
+    </div>
+</body>
 </html>
